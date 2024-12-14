@@ -1,0 +1,12 @@
+.switchLocale {
+    display: flex;
+    list-style: none;
+}
+
+.switchLocale li {
+    padding: 5px;
+}
+
+.switchLocale img {
+    width: 40px;
+}

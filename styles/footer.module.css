@@ -17,7 +17,7 @@
 @media (max-width: 768px) {
     .footerBox {
         width: calc(100% - 40px);
-        right: 20;
-        left: 20;
+        right: 20px;
+        left: 20px;
     }
 }

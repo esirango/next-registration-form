@@ -4,7 +4,7 @@ type propType = {
     type: string;
 };
 
-function MainForm({ type }: propType) {
+function Form({ type }: propType) {
     return (
         <>
             <h1>MainForm</h1>
@@ -12,4 +12,4 @@ function MainForm({ type }: propType) {
     );
 }
 
-export default MainForm;
+export default Form;

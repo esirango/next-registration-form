@@ -1,11 +1,11 @@
-import MainForm from "@/components/Form/mainForm";
+import Form from "@/components/Form/Form";
 import React from "react";
 
 function index() {
     return (
         <>
             <h1>login</h1>
-            <MainForm type="login" />
+            <Form type="login" />
         </>
     );
 }

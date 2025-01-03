@@ -3,15 +3,10 @@ import { useRouter } from "next/router";
 import React from "react";
 
 import styles from "@/styles/navbar.module.css";
-import langFactory from "@/funcs/lang";
-
-import langData from "@/data/lang.json";
 
 function Navbar() {
     const router = useRouter();
     const { locales, locale, asPath, pathname, query } = router;
-
-    const lang = langFactory(langData);
 
     return (
         <>

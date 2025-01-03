@@ -7,7 +7,7 @@ type propType = {
 function MainForm({ type }: propType) {
     return (
         <>
-            <h1>mainForm</h1>
+            <h1>MainForm</h1>
         </>
     );
 }

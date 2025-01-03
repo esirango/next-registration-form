@@ -1,4 +1,4 @@
-import MainForm from "@/components/Form/mainForm";
+import MainForm from "@/components/Form/MainForm";
 import React from "react";
 
 function index() {

@@ -5,9 +5,9 @@
     width: calc(100% - 200px);
     height: 100px;
     position: fixed;
-    bottom: 20;
-    right: 100;
-    left: 100;
+    bottom: 20px;
+    right: 100px;
+    left: 100px;
     display: flex;
     align-items: center;
     justify-content: center;

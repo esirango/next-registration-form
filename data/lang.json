@@ -18,5 +18,10 @@
     "AUTH_LOGIN_FORM_PASSWORD": {
         "fa": "رمزعبور",
         "en": "Password"
+    },
+
+    "AUTH_LOGIN_FORM_NAME": {
+        "fa": "نام",
+        "en": "name"
     }
 }

@@ -1,5 +1,5 @@
 import classNames from "classnames";
-import React from "react";
+import React, { useRef, useState } from "react";
 
 import styles from "@/styles/input.module.css";
 
@@ -7,8 +7,14 @@ import langFactory from "@/funcs/lang";
 
 import langData from "@/data/lang.json";
 
+import parse from "html-react-parser";
+
 function Input({ type, errors, register, setValue, trigger }: any) {
     const lang = langFactory(langData);
+
+    const refPassword = useRef<any>(null);
+    const [passwordBtn, setPasswordBtn] = useState<boolean>(false);
+    const [showPassword, setShowPassword] = useState<boolean>(false);
 
     const loginInputTypes = [
         {
@@ -29,9 +35,23 @@ function Input({ type, errors, register, setValue, trigger }: any) {
     const registerInputTypes = [
         {
             id: 1,
+            type: "text",
+            name: "name",
+            maxLength: 30,
+            minLength: 3,
+        },
+        {
+            id: 2,
             type: "email",
             name: "email",
             pattern: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+        },
+        {
+            id: 3,
+            type: "password",
+            name: "password",
+            maxLength: 32,
+            minLength: 8,
         },
     ];
 
@@ -53,7 +73,13 @@ function Input({ type, errors, register, setValue, trigger }: any) {
                     dir="ltr"
                 >
                     <input
-                        type={input?.type}
+                        type={
+                            input.type === "password"
+                                ? showPassword
+                                    ? "text"
+                                    : "password"
+                                : input?.type
+                        }
                         placeholder=" "
                         {...register(input?.name, {
                             required: lang(
@@ -78,6 +104,7 @@ function Input({ type, errors, register, setValue, trigger }: any) {
                                 ),
                             },
                         })}
+                        ref={refPassword}
                         onChange={(e) => {
                             setValue(input?.name, e.target.value);
                             trigger(input?.name).then((r: any) => {});
@@ -94,6 +121,20 @@ function Input({ type, errors, register, setValue, trigger }: any) {
                         )}
                     </small>
                     <i className="material-icons">&#xe001;</i>
+                    {input.type === "password" && (
+                        <div
+                            className={classNames(
+                                "material-icons",
+                                styles.iconBtn,
+                                passwordBtn ? "" : "hidden"
+                            )}
+                            onClick={() => setShowPassword(!showPassword)}
+                        >
+                            {showPassword
+                                ? parse("&#xe8f5;")
+                                : parse("&#xe417;")}
+                        </div>
+                    )}
                 </div>
             ))}
         </>

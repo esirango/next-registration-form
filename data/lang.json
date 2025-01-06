@@ -10,5 +10,13 @@
     "FORM_REGISTER_TITLE": {
         "fa": "ثبت نام",
         "en": "Signup"
+    },
+    "AUTH_LOGIN_FORM_EMAIL": {
+        "fa": "ایمیل",
+        "en": "Email"
+    },
+    "AUTH_LOGIN_FORM_PASSWORD": {
+        "fa": "رمزعبور",
+        "en": "Password"
     }
 }

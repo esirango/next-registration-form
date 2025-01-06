@@ -6,10 +6,20 @@ import Footer from "../skeleton/Footer";
 
 import langData from "@/data/lang.json";
 import langFactory from "@/funcs/lang";
+import { SubmitHandler, useForm } from "react-hook-form";
+import Input from "./Input";
 
 type propType = {
     type: string;
 };
+
+interface IFormInput {
+    name: string;
+    email: string;
+    password: string;
+    confirmPassword: string;
+    agreeWithRules: boolean;
+}
 
 function Form({ type }: propType) {
     const lang = langFactory(langData);
@@ -25,11 +35,40 @@ function Form({ type }: propType) {
                 "";
         }
     };
+
+    const postData = (data: any) => {
+        console.log("hi");
+    };
+
+    const {
+        register,
+        handleSubmit,
+        formState: { errors },
+        trigger,
+        setValue,
+    } = useForm<IFormInput>();
+    const onSubmit: SubmitHandler<IFormInput> = (data) => {
+        postData(data);
+    };
+
     return (
         <>
             <Header />
             <div className={styles.form}>
                 <h2>{renderTitle(type)}</h2>
+                <form
+                    action=""
+                    onSubmit={handleSubmit(onSubmit)}
+                    autoComplete="off"
+                >
+                    <Input
+                        type={type}
+                        errors={errors}
+                        register={register}
+                        setValue={setValue}
+                        trigger={trigger}
+                    />
+                </form>
             </div>
             <Footer />
         </>

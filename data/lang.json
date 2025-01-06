@@ -2,5 +2,13 @@
     "FOOTER_TEXT": {
         "fa": "توسعه یافته توسط اسی رنگو",
         "en": "Made by esirango"
+    },
+    "FORM_LOGIN_TITLE": {
+        "fa": "ورود به حساب",
+        "en": "Login"
+    },
+    "FORM_REGISTER_TITLE": {
+        "fa": "ثبت نام",
+        "en": "Signup"
     }
 }

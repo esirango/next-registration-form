@@ -9,7 +9,7 @@ import langData from "@/data/lang.json";
 
 import parse from "html-react-parser";
 
-function Input({ type, errors, register, setValue, trigger }: any) {
+function Input({ type, errors, register, setValue, trigger, getValues }: any) {
     const lang = langFactory(langData);
 
     const refPassword = useRef<any>(null);
@@ -37,7 +37,7 @@ function Input({ type, errors, register, setValue, trigger }: any) {
             id: 1,
             type: "text",
             name: "name",
-            maxLength: 30,
+            maxLength: 20,
             minLength: 3,
         },
         {
@@ -53,6 +53,7 @@ function Input({ type, errors, register, setValue, trigger }: any) {
             maxLength: 32,
             minLength: 8,
         },
+        { id: 4, type: "checkbox", name: "privacyPolicy" },
     ];
 
     const inputTypes =
@@ -106,7 +107,17 @@ function Input({ type, errors, register, setValue, trigger }: any) {
                         })}
                         ref={refPassword}
                         onChange={(e) => {
-                            setValue(input?.name, e.target.value);
+                            if (e.target.name !== "privacyPolicy") {
+                                setValue(input?.name, e.target.value);
+                            } else {
+                                setValue(
+                                    input?.name,
+                                    getValues(e.target.name) === true
+                                        ? false
+                                        : true
+                                );
+                            }
+
                             trigger(input?.name).then((r: any) => {});
                         }}
                     />

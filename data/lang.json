@@ -23,5 +23,9 @@
     "AUTH_LOGIN_FORM_NAME": {
         "fa": "نام",
         "en": "name"
+    },
+    "AUTH_LOGIN_FORM_PRIVACYPOLICY": {
+        "fa": "سیاست حفظ حریم خصوصی را خوانده ام و می پذیرم",
+        "en": "I have read and accept Privacy Policy"
     }
 }

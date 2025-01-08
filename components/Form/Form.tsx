@@ -17,8 +17,7 @@ interface IFormInput {
     name: string;
     email: string;
     password: string;
-    confirmPassword: string;
-    agreeWithRules: boolean;
+    privacyPolicy: boolean;
 }
 
 function Form({ type }: propType) {
@@ -46,10 +45,13 @@ function Form({ type }: propType) {
         formState: { errors },
         trigger,
         setValue,
+        getValues,
     } = useForm<IFormInput>();
     const onSubmit: SubmitHandler<IFormInput> = (data) => {
         postData(data);
     };
+
+    console.log(getValues("privacyPolicy"));
 
     return (
         <>
@@ -67,6 +69,7 @@ function Form({ type }: propType) {
                         register={register}
                         setValue={setValue}
                         trigger={trigger}
+                        getValues={getValues}
                     />
                 </form>
             </div>

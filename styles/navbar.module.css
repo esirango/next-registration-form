@@ -1,7 +1,70 @@
 .navbar {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
+    background-color: #121212;
+    width: 100vw;
+    padding: 10px 100px 5px 100px;
+}
+
+.navbar .hamburger {
+    display: none;
+    width: 55px;
+    height: 55px;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 50%;
+    transition: all ease-in 0.2s;
+}
+
+.navbar .hamburger:hover {
+    background-color: #ffffff14;
+}
+
+.backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(8px);
+    z-index: 10;
+}
+
+.menu {
+    position: fixed;
+    top: 0;
+    width: 300px;
+    height: 100%;
+    z-index: 20;
+    background-color: #121212;
+    display: flex;
+    flex-direction: column;
+    padding: 30px 20px;
+    animation: drawer 0.2s linear 1 forwards;
+}
+
+.links {
+    display: block;
+}
+
+.menuLinks {
+    display: flex;
+    flex-direction: column;
+}
+
+.links a,
+.menuLinks a {
+    margin: 0 5px;
+    transition: all ease-in 0.2s;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.links a:hover,
+.menuLinks a:hover {
+    background-color: #ffffff14;
 }
 
 .switchLocale {
@@ -15,4 +78,36 @@
 
 .switchLocale img {
     width: 40px;
+}
+
+@keyframes drawer {
+    0% {
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        padding: 10px 20px 5px 20px;
+    }
+
+    .navbar .hamburger {
+        display: block;
+    }
+
+    .links {
+        display: none;
+    }
+}
+
+@media (max-width: 468px) {
+    .switchLocale img {
+        width: 30px;
+    }
+
+    .navbar .hamburger {
+        width: 40px;
+    }
 }

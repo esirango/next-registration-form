@@ -27,5 +27,41 @@
     "AUTH_LOGIN_FORM_PRIVACYPOLICY": {
         "fa": "سیاست حفظ حریم خصوصی را خوانده ام و می پذیرم",
         "en": "I have read and accept Privacy Policy"
+    },
+    "AUTH_ERROR_MSG_REQUIRED_NAME": {
+        "fa": "فیلد نام الزامی است",
+        "en": "The name field is required"
+    },
+    "AUTH_ERROR_MSG_MIN_NAME": {
+        "fa": "طول نام باید بیش از 3 کارکتر باشد",
+        "en": "Name length must be more than 3 characters"
+    },
+    "AUTH_ERROR_MSG_MAX_NAME": {
+        "fa": "طول نام نباید بیش از 20 کارکتر باشد",
+        "en": "The length of the name should not exceed 20 characters"
+    },
+    "AUTH_ERROR_MSG_REQUIRED_PASSWORD": {
+        "fa": "فیلد رمزعبور الزامی است",
+        "en": "The password field is required"
+    },
+    "AUTH_ERROR_MSG_MIN_PASSWORD": {
+        "fa": "طول رمزعبور باید بیش از 8 کارکتر باشد",
+        "en": "password length must be more than 8 characters"
+    },
+    "AUTH_ERROR_MSG_MAX_PASSWORD": {
+        "fa": "طول رمزعبور نباید بیش از 32 کارکتر باشد",
+        "en": "The length of the password should not exceed 32 characters"
+    },
+    "AUTH_ERROR_MSG_REQUIRED_EMAIL": {
+        "fa": "فیلد ایمیل الزامی است",
+        "en": "The email field is required"
+    },
+    "AUTH_ERROR_MSG_PATTERN_EMAIL": {
+        "fa": "لطفاً یک آدرس ایمیل معتبر وارد کنید",
+        "en": "Please enter a valid email address"
+    },
+    "AUTH_ERROR_MSG_REQUIRED_PRIVACYPOLICY": {
+        "fa": "تایید فیلد سیاست حفظ حریم خصوصی الزامی است",
+        "en": "Confirmation of the privacy policy field is required"
     }
 }

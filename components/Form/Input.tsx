@@ -1,5 +1,5 @@
 import classNames from "classnames";
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 import styles from "@/styles/input.module.css";
 
@@ -8,8 +8,11 @@ import langFactory from "@/funcs/lang";
 import langData from "@/data/lang.json";
 
 import parse from "html-react-parser";
+import { useRouter } from "next/router";
 
 function Input({ type, errors, register, setValue, trigger, getValues }: any) {
+    const { pathname, route, locale } = useRouter();
+
     const lang = langFactory(langData);
 
     const refPassword = useRef<any>(null);
@@ -62,6 +65,20 @@ function Input({ type, errors, register, setValue, trigger, getValues }: any) {
             : type === "register"
             ? registerInputTypes
             : [];
+
+    const isInitialMount = useRef(true);
+    useEffect(() => {
+        if (isInitialMount.current) {
+            isInitialMount.current = false;
+            return;
+        }
+
+        if (locale) {
+            inputTypes?.forEach(
+                (input: any) => getValues(input.name) && trigger(input.name)
+            );
+        }
+    }, [locale]);
 
     return (
         <>

@@ -51,8 +51,6 @@ function Form({ type }: propType) {
         postData(data);
     };
 
-    console.log(getValues("privacyPolicy"));
-
     return (
         <>
             <Header />

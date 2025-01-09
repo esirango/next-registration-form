@@ -67,6 +67,7 @@ function Input({ type, errors, register, setValue, trigger, getValues }: any) {
             : [];
 
     const isInitialMount = useRef(true);
+
     useEffect(() => {
         if (isInitialMount.current) {
             isInitialMount.current = false;
@@ -148,7 +149,6 @@ function Input({ type, errors, register, setValue, trigger, getValues }: any) {
                             <p></p>
                         )}
                     </small>
-                    <i className="material-icons">&#xe001;</i>
                     {input.type === "password" && (
                         <div
                             className={classNames(

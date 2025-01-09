@@ -1,0 +1,13 @@
+.formLabel input {
+    width: 100%;
+    outline: none;
+    border-radius: 5px;
+    padding: 10px;
+    border: 1px solid #fff;
+    background-color: #1c1b1b;
+    margin: 10px 0;
+}
+
+.formLabel.hasError input {
+    border-color: tomato;
+}

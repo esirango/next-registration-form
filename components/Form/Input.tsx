@@ -16,7 +16,6 @@ function Input({ type, errors, register, setValue, trigger, getValues }: any) {
     const lang = langFactory(langData);
 
     const refPassword = useRef<any>(null);
-    const [passwordBtn, setPasswordBtn] = useState<boolean>(false);
     const [showPassword, setShowPassword] = useState<boolean>(false);
 
     const loginInputTypes = [
@@ -153,8 +152,7 @@ function Input({ type, errors, register, setValue, trigger, getValues }: any) {
                         <div
                             className={classNames(
                                 "material-icons",
-                                styles.iconBtn,
-                                passwordBtn ? "" : "hidden"
+                                styles.iconBtn
                             )}
                             onClick={() => setShowPassword(!showPassword)}
                         >

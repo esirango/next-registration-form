@@ -8,6 +8,8 @@ import langData from "@/data/lang.json";
 import langFactory from "@/funcs/lang";
 import { SubmitHandler, useForm } from "react-hook-form";
 import Input from "./Input";
+import Link from "next/link";
+import { useRouter } from "next/router";
 
 type propType = {
     type: string;
@@ -21,6 +23,8 @@ interface IFormInput {
 }
 
 function Form({ type }: propType) {
+    const { locale } = useRouter();
+
     const lang = langFactory(langData);
 
     const renderTitle = (type: string) => {
@@ -69,6 +73,23 @@ function Form({ type }: propType) {
                         trigger={trigger}
                         getValues={getValues}
                     />
+                    <div className={styles.buttons}>
+                        <button>
+                            {lang(`FORM_${type.toUpperCase()}_TITLE`)}
+                        </button>
+                        <Link
+                            href={`/${
+                                type === "register" ? "login" : "register"
+                            }`}
+                            locale={locale}
+                        >
+                            <button>
+                                {lang(
+                                    `FORM_CHANGE_WAY_IN_${type.toUpperCase()}_TITLE`
+                                )}
+                            </button>
+                        </Link>
+                    </div>
                 </form>
             </div>
             <Footer />

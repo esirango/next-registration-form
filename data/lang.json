@@ -63,5 +63,13 @@
     "AUTH_ERROR_MSG_REQUIRED_PRIVACYPOLICY": {
         "fa": "تایید فیلد سیاست حفظ حریم خصوصی الزامی است",
         "en": "Confirmation of the privacy policy field is required"
+    },
+    "FORM_CHANGE_WAY_IN_LOGIN_TITLE": {
+        "fa": "ایجاد حساب",
+        "en": "Create Account"
+    },
+    "FORM_CHANGE_WAY_IN_REGISTER_TITLE": {
+        "fa": "در حال حاضر یک حساب کاربری دارید؟",
+        "en": "Already have an account?"
     }
 }

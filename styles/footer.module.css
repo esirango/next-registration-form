@@ -4,7 +4,7 @@
     padding: 20px;
     width: calc(100% - 200px);
     height: 100px;
-    position: absolute;
+    position: relative;
     bottom: 20px;
     right: 100px;
     left: 100px;

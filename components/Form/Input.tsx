@@ -152,7 +152,7 @@ function Input({ type, errors, register, setValue, trigger, getValues }: any) {
                         <div
                             className={classNames(
                                 "material-icons",
-                                styles.iconBtn
+                                styles.passwordIcon
                             )}
                             onClick={() => setShowPassword(!showPassword)}
                         >

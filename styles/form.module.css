@@ -11,13 +11,11 @@
 
 .form .buttons {
     display: flex;
-    justify-content: space-between;
 }
 
 .form .buttons button {
     border: none;
     width: fit-content;
-    margin: 0 10px;
     border-radius: 5px;
     padding: 15px;
     font-size: 16px;
@@ -35,7 +33,13 @@
 
 .form .buttons a button {
     background-color: #303030;
+    margin-right: 20px;
     transition: all ease-in 0.2s;
+}
+
+html[dir="ltr"] .form .buttons a button {
+    margin-right: inherit;
+    margin-left: 20px;
 }
 
 .form .buttons a button:hover {

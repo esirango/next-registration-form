@@ -6,6 +6,7 @@
     justify-content: flex-start;
     align-items: center;
     flex-direction: column;
+    text-align: right;
 }
 
 .form .buttons {
@@ -39,4 +40,8 @@
 
 .form .buttons a button:hover {
     background-color: #1d1d1d;
+}
+
+html[dir="ltr"] .form {
+    text-align: left;
 }

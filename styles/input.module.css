@@ -1,13 +1,49 @@
+.formLabel {
+    position: relative;
+}
+
 .formLabel input {
     width: 100%;
     outline: none;
-    border-radius: 5px;
-    padding: 10px;
-    border: 1px solid #fff;
-    background-color: #1c1b1b;
+    border-radius: 4px;
+    padding: 15px;
+    border: 2px solid #fff;
     margin: 10px 0;
+    text-align: right;
+    z-index: 10;
+    direction: rtl;
 }
 
 .formLabel.hasError input {
     border-color: tomato;
+}
+
+.formLabel input:not(input[type="checkbox"]) + label {
+    position: absolute;
+    top: 25px;
+    right: 20px;
+    transition: all ease-in 0.1s;
+}
+
+html[dir="ltr"] .formLabel input:not(input[type="checkbox"]) + label {
+    left: 20px;
+    right: inherit;
+}
+
+.formLabel input:not(input[type="checkbox"]):focus + label,
+.formLabel input:not(input[type="checkbox"]):not(:placeholder-shown) + label {
+    top: -2px;
+    font-size: 14px;
+    z-index: 20;
+    background-color: var(--background);
+    padding: 0 10px;
+}
+
+.errorMsgBox p {
+    padding: 5px 0;
+}
+
+html[dir="ltr"] .formLabel input {
+    text-align: left;
+    direction: ltr;
 }

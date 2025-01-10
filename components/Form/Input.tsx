@@ -141,7 +141,7 @@ function Input({ type, errors, register, setValue, trigger, getValues }: any) {
                     <label htmlFor={input.name}>
                         {lang(`AUTH_LOGIN_FORM_${input.name}`.toUpperCase())}
                     </label>
-                    <small className={styles.fieldInfo}>
+                    <small className={styles.errorMsgBox}>
                         {errors[input.name] ? (
                             <p>{errors[input.name].message}</p>
                         ) : (

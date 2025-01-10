@@ -73,7 +73,10 @@ function Form({ type }: propType) {
                         trigger={trigger}
                         getValues={getValues}
                     />
-                    <div className={styles.buttons}>
+                    <div
+                        className={styles.buttons}
+                        style={type === "login" ? { marginTop: "50px" } : {}}
+                    >
                         <button>
                             {lang(`FORM_${type.toUpperCase()}_TITLE`)}
                         </button>

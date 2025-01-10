@@ -3,7 +3,7 @@
 }
 
 .formLabel input {
-    width: 100%;
+    width: 450px;
     outline: none;
     border-radius: 4px;
     padding: 15px;
@@ -85,4 +85,16 @@ html[dir="ltr"] .formLabel input {
 html[dir="ltr"] .passwordIcon {
     right: 15px;
     left: inherit;
+}
+
+@media (max-width: 768px) {
+    .formLabel input {
+        width: 350px;
+    }
+}
+
+@media (max-width: 468px) {
+    .formLabel input {
+        width: 100%;
+    }
 }

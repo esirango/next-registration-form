@@ -1,6 +1,8 @@
 :root {
     --background: #ffffff;
     --foreground: #171717;
+    --unique_color: #2faff9;
+    --unique-hover-color: #0077ff;
 }
 
 @media (prefers-color-scheme: dark) {

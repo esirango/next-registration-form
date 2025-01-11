@@ -155,6 +155,11 @@ function Input({ type, errors, register, setValue, trigger, getValues }: any) {
                                 styles.passwordIcon
                             )}
                             onClick={() => setShowPassword(!showPassword)}
+                            style={
+                                locale === "fa" && type === "register"
+                                    ? { left: "30px" }
+                                    : {}
+                            }
                         >
                             {showPassword
                                 ? parse("&#xe8f5;")

@@ -71,5 +71,9 @@
     "FORM_CHANGE_WAY_IN_REGISTER_TITLE": {
         "fa": "در حال حاضر یک حساب کاربری دارید؟",
         "en": "Already have an account?"
+    },
+    "NOT_FOUND_PAGE_LINK_TO_HOME": {
+        "fa": "بازگشت به خانه",
+        "en": "Return to Home page"
     }
 }

@@ -94,6 +94,9 @@ function Form({ type }: propType) {
                         </Link>
                     </div>
                 </form>
+                <div className={styles.line}>
+                    <span>{lang("AUTH_FORM_OR_SPAN_TEXT")}</span>
+                </div>
             </div>
             <Footer />
         </>

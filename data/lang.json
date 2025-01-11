@@ -75,5 +75,9 @@
     "NOT_FOUND_PAGE_LINK_TO_HOME": {
         "fa": "بازگشت به خانه",
         "en": "Return to Home page"
+    },
+    "AUTH_FORM_OR_SPAN_TEXT": {
+        "fa": "یا",
+        "en": "or"
     }
 }

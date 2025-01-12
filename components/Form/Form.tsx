@@ -109,7 +109,11 @@ function Form({ type }: propType) {
                     <span>{lang("AUTH_FORM_OR_SPAN_TEXT")}</span>
                 </div>
                 <div className={styles.googleSection}>
-                    <GoogleOAuthProvider clientId={String(GOOGLE_CLIENT_ID)}>
+                    <GoogleOAuthProvider
+                        clientId={
+                            "256591891219-sq0uk8tvpep66jprg0pqrjjfmr72u3nm.apps.googleusercontent.com"
+                        }
+                    >
                         <GoogleLogin
                             onSuccess={handleLoginSuccess}
                             onError={handleLoginFailure}

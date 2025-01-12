@@ -60,10 +60,7 @@ function Form({ type }: propType) {
 
     const handleLoginSuccess = (response: any) => {
         console.log("Login Success:", response);
-        // در اینجا می‌توانید توکن دریافت‌شده از گوگل را ارسال کنید یا مراحل بعدی را انجام دهید
     };
-
-    console.log(GOOGLE_CLIENT_ID);
 
     const handleLoginFailure = () => {
         console.error("Login Failed:");
@@ -111,12 +108,14 @@ function Form({ type }: propType) {
                 <div className={styles.line}>
                     <span>{lang("AUTH_FORM_OR_SPAN_TEXT")}</span>
                 </div>
-                <GoogleOAuthProvider clientId="256591891219-sq0uk8tvpep66jprg0pqrjjfmr72u3nm.apps.googleusercontent.com">
-                    <GoogleLogin
-                        onSuccess={handleLoginSuccess}
-                        onError={handleLoginFailure}
-                    />
-                </GoogleOAuthProvider>
+                <div className={styles.googleSection}>
+                    <GoogleOAuthProvider clientId={String(GOOGLE_CLIENT_ID)}>
+                        <GoogleLogin
+                            onSuccess={handleLoginSuccess}
+                            onError={handleLoginFailure}
+                        />
+                    </GoogleOAuthProvider>
+                </div>
             </div>
             <Footer />
         </>

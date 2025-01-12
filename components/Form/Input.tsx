@@ -84,6 +84,7 @@ function Input({ type, errors, register, setValue, trigger, getValues }: any) {
         <>
             {inputTypes?.map((input: any) => (
                 <div
+                    key={input.id}
                     className={classNames(
                         styles.formLabel,
                         errors[input?.name] ? styles.hasError : ""

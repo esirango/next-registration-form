@@ -76,3 +76,7 @@ html[dir="ltr"] .form {
 .form .line ::after {
     right: 0;
 }
+
+.form .googleSection {
+    margin-top: 20px;
+}

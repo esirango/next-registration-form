@@ -10,9 +10,7 @@ import { SubmitHandler, useForm } from "react-hook-form";
 import Input from "./Input";
 import Link from "next/link";
 import { useRouter } from "next/router";
-
-import { GoogleLogin, GoogleOAuthProvider } from "@react-oauth/google";
-import { GOOGLE_CLIENT_ID } from "@/store/environmentVariables";
+import GoogleLoginComponent from "./GoogleLoginComponent";
 
 type propType = {
     type: string;
@@ -58,14 +56,6 @@ function Form({ type }: propType) {
         postData(data);
     };
 
-    const handleLoginSuccess = (response: any) => {
-        console.log("Login Success:", response);
-    };
-
-    const handleLoginFailure = () => {
-        console.error("Login Failed:");
-    };
-
     return (
         <>
             <Header />
@@ -105,23 +95,8 @@ function Form({ type }: propType) {
                         </Link>
                     </div>
                 </form>
-                <div className={styles.line}>
-                    <span>{lang("AUTH_FORM_OR_SPAN_TEXT")}</span>
-                </div>
-                <div className={styles.googleSection}>
-                    <GoogleOAuthProvider
-                        clientId={String(
-                            GOOGLE_CLIENT_ID
-                                ? GOOGLE_CLIENT_ID
-                                : "256591891219-sq0uk8tvpep66jprg0pqrjjfmr72u3nm.apps.googleusercontent.com"
-                        )}
-                    >
-                        <GoogleLogin
-                            onSuccess={handleLoginSuccess}
-                            onError={handleLoginFailure}
-                        />
-                    </GoogleOAuthProvider>
-                </div>
+                {type === "login" ||
+                    (type === "register" && <GoogleLoginComponent />)}
             </div>
             <Footer />
         </>

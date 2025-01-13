@@ -49,34 +49,3 @@ html[dir="ltr"] .form .buttons a button {
 html[dir="ltr"] .form {
     text-align: left;
 }
-
-.form .line {
-    background-color: #333;
-    border-radius: 10px;
-    margin-top: 20px;
-    padding: 5px 10px;
-    position: relative;
-}
-
-.form .line ::before,
-.form .line ::after {
-    content: "";
-    background-color: #333;
-    height: 1px;
-    position: absolute;
-    top: 50%;
-    width: 150px;
-    margin: 0 50px;
-}
-
-.form .line ::before {
-    left: 0;
-}
-
-.form .line ::after {
-    right: 0;
-}
-
-.form .googleSection {
-    margin-top: 22px;
-}

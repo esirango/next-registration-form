@@ -58,11 +58,29 @@ function Input({ type, errors, register, setValue, trigger, getValues }: any) {
         { id: 4, type: "checkbox", name: "privacyPolicy" },
     ];
 
+    const forgotPasswordInputTypes = [
+        {
+            id: 1,
+            type: "email",
+            name: "email",
+            pattern: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+        },
+        {
+            id: 2,
+            type: "password",
+            name: "password",
+            maxLength: 32,
+            minLength: 8,
+        },
+    ];
+
     const inputTypes =
         type === "login"
             ? loginInputTypes
             : type === "register"
             ? registerInputTypes
+            : type === "forgotPassword"
+            ? forgotPasswordInputTypes
             : [];
 
     const isInitialMount = useRef(true);

@@ -17,7 +17,7 @@
     border: none;
     width: fit-content;
     border-radius: 5px;
-    padding: 15px;
+    padding: 10px 15px;
     font-size: 16px;
     font-weight: 500;
     background-color: var(--unique_color);
@@ -48,4 +48,15 @@ html[dir="ltr"] .form .buttons a button {
 
 html[dir="ltr"] .form {
     text-align: left;
+}
+
+.form .forgotPasswordLink {
+    color: #90caf9;
+    text-decoration: underline;
+    text-decoration-color: #83c3f790;
+    transition: all ease-in 0.2s;
+}
+
+.form .forgotPasswordLink:hover {
+    text-decoration-color: #90caf9;
 }

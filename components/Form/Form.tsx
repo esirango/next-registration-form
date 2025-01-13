@@ -28,13 +28,16 @@ function Form({ type }: propType) {
 
     const lang = langFactory(langData);
 
+    const ifWasNotForgotPasswordType = type === "login" || type === "register";
+
     const renderTitle = (type: string) => {
         switch (type) {
             case "login":
                 return lang("FORM_LOGIN_TITLE");
             case "register":
                 return lang("FORM_REGISTER_TITLE");
-
+            case "forgotPassword":
+                return lang("FORM_FORGOT_PASSWORD_TITLE");
             default:
                 "";
         }
@@ -74,6 +77,17 @@ function Form({ type }: propType) {
                         trigger={trigger}
                         getValues={getValues}
                     />
+                    {type === "login" && (
+                        <Link
+                            href={"/forgotPassword"}
+                            locale={locale}
+                            className={styles.forgotPasswordLink}
+                        >
+                            {lang(
+                                "AUTH_FORM_FORGOT_PASSWORD_LINK_FOR_LOGIN_MODE"
+                            )}
+                        </Link>
+                    )}
                     <div
                         className={styles.buttons}
                         style={type === "login" ? { marginTop: "50px" } : {}}
@@ -81,22 +95,23 @@ function Form({ type }: propType) {
                         <button>
                             {lang(`FORM_${type.toUpperCase()}_TITLE`)}
                         </button>
-                        <Link
-                            href={`/${
-                                type === "register" ? "login" : "register"
-                            }`}
-                            locale={locale}
-                        >
-                            <button>
-                                {lang(
-                                    `FORM_CHANGE_WAY_IN_${type.toUpperCase()}_TITLE`
-                                )}
-                            </button>
-                        </Link>
+                        {ifWasNotForgotPasswordType && (
+                            <Link
+                                href={`/${
+                                    type === "register" ? "login" : "register"
+                                }`}
+                                locale={locale}
+                            >
+                                <button>
+                                    {lang(
+                                        `FORM_CHANGE_WAY_IN_${type.toUpperCase()}_TITLE`
+                                    )}
+                                </button>
+                            </Link>
+                        )}
                     </div>
                 </form>
-                {type === "login" ||
-                    (type === "register" && <GoogleLoginComponent />)}
+                {ifWasNotForgotPasswordType && <GoogleLoginComponent />}
             </div>
             <Footer />
         </>

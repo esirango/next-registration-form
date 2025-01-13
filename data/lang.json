@@ -79,5 +79,17 @@
     "AUTH_FORM_OR_SPAN_TEXT": {
         "fa": "یا",
         "en": "or"
+    },
+    "AUTH_FORM_FORGOT_PASSWORD_LINK_FOR_LOGIN_MODE": {
+        "fa": "رمز عبور را فراموش کرده اید؟",
+        "en": "Forgot Password?"
+    },
+    "FORM_FORGOT_PASSWORD_TITLE": {
+        "fa": "فراموشی رمزعبور",
+        "en": "Forgot Password"
+    },
+    "FORM_FORGOTPASSWORD_TITLE": {
+        "fa": "ارسال لینک ریست",
+        "en": "Send Reset Link"
     }
 }

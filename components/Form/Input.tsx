@@ -65,13 +65,6 @@ function Input({ type, errors, register, setValue, trigger, getValues }: any) {
             name: "email",
             pattern: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
         },
-        {
-            id: 2,
-            type: "password",
-            name: "password",
-            maxLength: 32,
-            minLength: 8,
-        },
     ];
 
     const inputTypes =

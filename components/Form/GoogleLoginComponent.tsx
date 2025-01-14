@@ -18,19 +18,12 @@ function GoogleLoginComponent() {
     const handleLoginFailure = () => {
         console.error("Login Failed:");
     };
+
+    console.log(GOOGLE_CLIENT_ID);
     return (
         <>
-            <div className={styles.line}>
-                <span>{lang("AUTH_FORM_OR_SPAN_TEXT")}</span>
-            </div>
             <div className={styles.googleSection}>
-                <GoogleOAuthProvider
-                    clientId={String(
-                        GOOGLE_CLIENT_ID
-                            ? GOOGLE_CLIENT_ID
-                            : "256591891219-sq0uk8tvpep66jprg0pqrjjfmr72u3nm.apps.googleusercontent.com"
-                    )}
-                >
+                <GoogleOAuthProvider clientId={String(GOOGLE_CLIENT_ID)}>
                     <GoogleLogin
                         onSuccess={handleLoginSuccess}
                         onError={handleLoginFailure}

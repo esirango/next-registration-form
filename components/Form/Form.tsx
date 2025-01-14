@@ -10,7 +10,7 @@ import { SubmitHandler, useForm } from "react-hook-form";
 import Input from "./Input";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import GoogleLoginComponent from "./GoogleLoginComponent";
+import OtherWayLogin from "./OtherWayLogin";
 
 type propType = {
     type: string;
@@ -111,7 +111,7 @@ function Form({ type }: propType) {
                         )}
                     </div>
                 </form>
-                {ifWasNotForgotPasswordType && <GoogleLoginComponent />}
+                {ifWasNotForgotPasswordType && <OtherWayLogin />}
             </div>
             <Footer />
         </>

@@ -28,7 +28,6 @@
 .formLabel input[type="checkbox"] + label {
     position: absolute;
     top: 10px;
-    left: 0px;
 }
 
 html[dir="ltr"] .formLabel input[type="checkbox"] + label {

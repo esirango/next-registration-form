@@ -91,5 +91,9 @@
     "FORM_FORGOTPASSWORD_TITLE": {
         "fa": "ارسال لینک ریست",
         "en": "Send Reset Link"
+    },
+    "FORM_SIGNIN_WITH_GITHUB_BUTTON_TITLE": {
+        "fa": "ورود با گیت هاب",
+        "en": "Sign in with GitHub"
     }
 }

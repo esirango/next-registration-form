@@ -1,0 +1,17 @@
+.githubSection {
+    margin-top: 22px;
+}
+
+.githubSection .signinButton {
+    width: 181.85px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: all ease-in 0.2s;
+    background-color: #6b6b6b;
+    border: none;
+    border-radius: 3px;
+}
+
+.githubSection .signinButton:hover {
+    background-color: #787878;
+}

@@ -1,0 +1,26 @@
+.line {
+    background-color: #333;
+    border-radius: 10px;
+    margin-top: 20px;
+    padding: 5px 10px;
+    position: relative;
+}
+
+.line ::before,
+.line ::after {
+    content: "";
+    background-color: #333;
+    height: 1px;
+    position: absolute;
+    top: 50%;
+    width: 150px;
+    margin: 0 50px;
+}
+
+.line ::before {
+    left: 0;
+}
+
+.line ::after {
+    right: 0;
+}

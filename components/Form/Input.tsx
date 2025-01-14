@@ -150,7 +150,14 @@ function Input({ type, errors, register, setValue, trigger, getValues }: any) {
                             trigger(input?.name).then((r: any) => {});
                         }}
                     />
-                    <label htmlFor={input.name}>
+                    <label
+                        htmlFor={input.name}
+                        style={
+                            input.type === "checkbox" && locale === "fa"
+                                ? { right: "35px" }
+                                : { left: "35px" }
+                        }
+                    >
                         {lang(`AUTH_LOGIN_FORM_${input.name}`.toUpperCase())}
                     </label>
                     <small className={styles.errorMsgBox}>

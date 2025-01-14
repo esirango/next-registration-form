@@ -5,13 +5,11 @@ import {
 import NextAuth from "next-auth";
 import GitHubProvider from "next-auth/providers/github";
 
-console.log(GITHUB_CLIENT_SECRET, GITHUB_CLIENT_ID);
-
 export default NextAuth({
     providers: [
         GitHubProvider({
-            clientId: String(GITHUB_CLIENT_ID),
-            clientSecret: String(GITHUB_CLIENT_SECRET),
+            clientId: "Ov23liu1lOhOOOlD4exH",
+            clientSecret: "6ec9dc2a5a7e8fb6d997a6ec84137efa51e0a54b",
         }),
     ],
     callbacks: {

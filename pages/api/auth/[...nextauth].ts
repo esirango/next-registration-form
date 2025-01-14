@@ -5,6 +5,8 @@ import {
 import NextAuth from "next-auth";
 import GitHubProvider from "next-auth/providers/github";
 
+console.log(GITHUB_CLIENT_SECRET, GITHUB_CLIENT_ID);
+
 export default NextAuth({
     providers: [
         GitHubProvider({

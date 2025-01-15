@@ -48,21 +48,20 @@ function Form({ type }: propType) {
         }
     };
 
-    const postData = (data: any) => {
-        const hasErrors = Object.keys(errors).length > 0;
+    const postData = async (data: any) => {
+        const isValid = await trigger();
+        const hasErrors = !isValid;
 
         setLoading(true);
 
-        setTimeout(() => {
-            setLoading(false);
-        }, 1000);
+        await new Promise((resolve) => setTimeout(resolve, 1000));
 
-        if (!loading) {
-            if (hasErrors) {
-                ShowToastError(type, lang);
-            } else {
-                ShowSuccessError(type, lang);
-            }
+        setLoading(false);
+
+        if (hasErrors) {
+            ShowToastError(type, lang);
+        } else {
+            ShowSuccessError(type, lang);
         }
     };
 
@@ -114,7 +113,10 @@ function Form({ type }: propType) {
                         <button
                             disabled={loading}
                             aria-busy={loading}
-                            onClick={(data) => postData(data)}
+                            onClick={(data) => {
+                                trigger();
+                                postData(data);
+                            }}
                         >
                             {lang(`FORM_${type.toUpperCase()}_TITLE`)}
                         </button>

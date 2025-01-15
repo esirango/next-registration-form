@@ -24,7 +24,7 @@ export default function langFactory(langSource: any) {
         const args = options?.args;
 
         if (args) {
-            return findKeysAndReplaceWithValues(langSource, key, args);
+            return findKeysAndReplaceWithValues(langSource, key, args, locale);
         } else {
             const langKey = langSource[key];
             if (isUndefined(langKey)) {
@@ -47,11 +47,13 @@ export default function langFactory(langSource: any) {
 const findKeysAndReplaceWithValues = (
     langSource: any,
     key: string,
-    args: argType[]
+    args: argType[],
+    locale: any
 ) => {
     if (!langSource) return;
 
-    let string = langSource[key];
+    let string = langSource[key]?.[locale]; // انتخاب مقدار زبان جاری
+
     // showing the keys and values we need if it's not provided by source(api)
     if (isUndefined(string)) {
         let str = "";
@@ -70,7 +72,11 @@ const findKeysAndReplaceWithValues = (
 
     // replacing keys with values
     args.forEach((arg) => {
-        string = string.replace(`@[${arg.key}]`, arg.value);
+        if (typeof string === "string") {
+            string = string.replace(`@[${arg.key}]`, arg.value);
+        } else {
+            console.error(`Expected string but got ${typeof string}:`, string);
+        }
     });
 
     // removing @[] from undefined characters in case of api typo

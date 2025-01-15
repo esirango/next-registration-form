@@ -2,7 +2,10 @@ import type { AppProps } from "next/app";
 
 import "@/styles/global/globals.css";
 import "@/styles/global/fonts.css";
+import "react-toastify/dist/ReactToastify.css";
+
 import Head from "next/head";
+import ToastContainerComponent from "@/components/toasts/ToastContainer";
 
 export default function App({ Component, pageProps }: AppProps) {
     return (
@@ -24,6 +27,7 @@ export default function App({ Component, pageProps }: AppProps) {
                 />
             </Head>
             <Component {...pageProps} />
+            <ToastContainerComponent />
         </>
     );
 }

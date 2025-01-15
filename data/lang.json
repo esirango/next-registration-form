@@ -95,5 +95,13 @@
     "FORM_SIGNIN_WITH_GITHUB_BUTTON_TITLE": {
         "fa": "ورود با گیت هاب",
         "en": "Sign in with GitHub"
+    },
+    "FORM_TOAST_SUCCESS_MSG": {
+        "fa": "@[FORM_TYPE] با موفقیت انجام شد",
+        "en": "@[FORM_TYPE] was successful"
+    },
+    "FORM_TOAST_ERROR_MSG": {
+        "fa": "@[FORM_TYPE] با شکست مواجه شد!",
+        "en": "@[FORM_TYPE] failed!"
     }
 }

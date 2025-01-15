@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import styles from "@/styles/form.module.css";
 import Header from "../skeleton/Header";
@@ -11,6 +11,9 @@ import Input from "./Input";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import OtherWayLogin from "./OtherWayLogin";
+
+import ShowToastError from "@/funcs/toasts/ShowToastError";
+import ShowSuccessError from "@/funcs/toasts/ShowToastSuccess";
 
 type propType = {
     type: string;
@@ -25,6 +28,8 @@ interface IFormInput {
 
 function Form({ type }: propType) {
     const { locale } = useRouter();
+
+    const [loading, setLoading] = useState<boolean>(false);
 
     const lang = langFactory(langData);
 
@@ -44,7 +49,21 @@ function Form({ type }: propType) {
     };
 
     const postData = (data: any) => {
-        console.log("hi");
+        const hasErrors = Object.keys(errors).length > 0;
+
+        setLoading(true);
+
+        setTimeout(() => {
+            setLoading(false);
+        }, 1000);
+
+        if (!loading) {
+            if (hasErrors) {
+                ShowToastError(type, lang);
+            } else {
+                ShowSuccessError(type, lang);
+            }
+        }
     };
 
     const {
@@ -92,7 +111,11 @@ function Form({ type }: propType) {
                         className={styles.buttons}
                         style={type === "login" ? { marginTop: "50px" } : {}}
                     >
-                        <button>
+                        <button
+                            disabled={loading}
+                            aria-busy={loading}
+                            onClick={(data) => postData(data)}
+                        >
                             {lang(`FORM_${type.toUpperCase()}_TITLE`)}
                         </button>
                         {ifWasNotForgotPasswordType && (
@@ -102,7 +125,7 @@ function Form({ type }: propType) {
                                 }`}
                                 locale={locale}
                             >
-                                <button>
+                                <button disabled={loading}>
                                     {lang(
                                         `FORM_CHANGE_WAY_IN_${type.toUpperCase()}_TITLE`
                                     )}
